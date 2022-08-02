@@ -7,7 +7,7 @@ const Details = () => {
 
 
     const { hits, isLoading, removeItem } = useGlobalContext();
-    const { params } = useParams();
+    const  {params} = useParams();
 
     // useEffect(() => {
     //     console.log(author, "get current url dynamic id");
@@ -18,18 +18,27 @@ const Details = () => {
         <>
             <div className="stories-div stories-details-div">
                 {
-                    <div className="card" >
-                        <h1>Author Name is : {params}</h1>
-                        <h2>Title</h2>
-                        <p>By <span>author</span> !! <span>num_comments</span> comments</p>
-                        <div className="card-button">
-                            <Link to="/">
-                                Go Back
-                            </Link>
-                        </div>
-                    </div>
-                }
+                    hits.filter((element, i) => {
+                        if (element.objectID === params) {
+                            return element
+                        }
+                    }).
+                        map((item) => {
+                            const { title, author, objectID, num_comments } = item;
+                            return (
+                                <div className="card" >
+                                    <h2>{title}</h2>
+                                    <p>By <span>{author}</span> !! <span>{num_comments}</span> comments</p>
+                                    <div className="card-button">
+                                        <Link to="/">
+                                            Go Back
+                                        </Link>
+                                    </div>
+                                </div>
 
+                            )
+                        })
+                }
             </div>
         </>
     )

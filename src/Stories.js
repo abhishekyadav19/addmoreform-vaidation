@@ -23,9 +23,9 @@ const Stories = () => {
                     hits.filter((element, i) => {
                         if (query === '') {
                             return element
-                        }else if (element.author.toLowerCase().includes(query)){
-                            return element 
-                        
+                        } else if (element.author.toLowerCase().includes(query)) {
+                            return element
+
                         }
                     }).
                         map((item) => {
@@ -36,7 +36,7 @@ const Stories = () => {
                                     <h2>{title}</h2>
                                     <p>By <span>{author}</span> !! <span>{num_comments}</span> comments</p>
                                     <div className="card-button">
-                                        <NavLink to={`details/${author}`} >
+                                        <NavLink to={`details/${objectID}`} >
                                             Details
                                         </NavLink>
                                         <a onClick={() => removeItem(objectID)}>
