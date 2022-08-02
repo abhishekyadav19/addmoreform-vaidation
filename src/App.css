@@ -105,3 +105,9 @@ button {
   cursor: pointer;
   display: inline-block;
 }
+.stories-details-div{
+  height: 100vh;
+}
+.stories-details-div .card{
+  height: 400px;
+}

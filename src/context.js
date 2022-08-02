@@ -4,10 +4,12 @@ import reducer from './reducer';
 const AppContext = createContext();
 
 let url = "https://hn.algolia.com/api/v1/search?";
+// let url = "https://www.omdbapi.com/?apikey=10d214da%20&s=titanic";
+
 
 const initialState = {
   isLoading: true,
-  query: "",
+  query:"",
   tags:"",
   objectID:"",
   nbPages: 0,
@@ -49,12 +51,14 @@ const Context = ({ children }) => {
   }
   useEffect(() => {
    let timer = setTimeout(() => {
-      fetchApiData(`${url}query=${state.query}&page=${state.page}${state.objectID}&tags=${state.tags}`)
+      fetchApiData(`${url}query=${state.query}&page=${state.page}`)
+      // fetchApiData(`${url}&page=${state.page}&tags=${state.tags}`)
+
     }, 1000);
     return () => {
       clearTimeout(timer)
     }
-  }, [state.query, state.page])
+  }, [state.query,state.page])
 
   const searchPost = (searchquery) => {
     dispatch({

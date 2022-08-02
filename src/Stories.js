@@ -2,9 +2,10 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import { useGlobalContext } from './context'
 
-const Stories = () => {
-    const { hits, isLoading, removeItem } = useGlobalContext();
 
+const Stories = () => {
+    const { hits, isLoading, removeItem, query } = useGlobalContext();
+    // const {  } = hits;
 
     if (isLoading) {
         return (
@@ -14,29 +15,38 @@ const Stories = () => {
         );
     }
 
+
     return (
         <>
             <div className="stories-div">
                 {
-                    hits.map((item) => {
-                        const { title, author, objectID, url, num_comments } = item;
-                        return (
-                            <NavLink to="/details">
+                    hits.filter((element, i) => {
+                        if (query === '') {
+                            return element
+                        }else if (element.author.toLowerCase().includes(query)){
+                            return element 
+                        
+                        }
+                    }).
+                        map((item) => {
+                            const { title, author, objectID, num_comments } = item;
+                            return (
+
                                 <div className="card" key={objectID}>
                                     <h2>{title}</h2>
                                     <p>By <span>{author}</span> !! <span>{num_comments}</span> comments</p>
                                     <div className="card-button">
-                                        <a href={url} target="_blank">
-                                            Read More
-                                        </a>
+                                        <NavLink to={`details/${author}`} >
+                                            Details
+                                        </NavLink>
                                         <a onClick={() => removeItem(objectID)}>
                                             Remove
                                         </a>
                                     </div>
                                 </div>
-                            </NavLink>
-                        )
-                    })
+
+                            )
+                        })
                 }
 
             </div>
