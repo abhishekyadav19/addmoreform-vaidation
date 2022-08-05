@@ -1,11 +1,14 @@
+
 .bx {
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #ccd4db;
 }
-
+.field_error{
+    color: red !important;
+}
 .close-icon {
     position: absolute !important;
     right: 0%;
@@ -19,21 +22,34 @@
     background: white;
     margin: 5rem auto;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+    box-shadow: RGB(0 0 0 / 25%) 0px 14px 28px, RGB(0 0 0 / 22%) 0px 10px 10px;
 }
 
 .MuiTextField-root {
-    margin-bottom: 1.5rem !important;
     width: 100%;
 }
-
+.mb-rem{
+    margin-bottom: 1rem;
+    position: relative;
+}
 .MuiTextField-root:last-child {
-    margin-bottom: 0rem !important;
     width: 100%;
 }
 
-
-
+.form-control{
+    width:100%;
+    border:2px solid #aaa;
+    border-radius:4px;
+    margin:5px 0;
+    outline:none;
+    padding:15px;
+    box-sizing:border-box;
+    transition:.3s;
+}
+.form-control:focus{
+    border-color:dodgerBlue;
+    box-shadow:0 0 4px 0 dodgerBlue;
+  }
 .left_bx {
     padding: 2rem;
     width: 50%;
@@ -45,8 +61,11 @@
     background-size: cover;
     opacity: .8;
 }
-
+#submt{
+    width: 40%;
+}
 @media (max-width:576px) {
+   
     .left_bx {
         width: 100%;
         padding: 0;
@@ -74,6 +93,9 @@
 
     .css-46bh2p-MuiCardContent-root {
         padding: 5px !important;
+    }
+    #submt{
+        width: 90%;
     }
 }
 
