@@ -1,18 +1,11 @@
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
-import './App.css';
-import Details from './Details';
-import Home from './Home';
+// import './App.css';
+import LoginForm from './authentication/LoginForm';
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="/details/:params" element={<Details />} />
-        </Routes>
-      </BrowserRouter>
+      <LoginForm />  
     </>
   );
 }

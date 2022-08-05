@@ -1,0 +1,89 @@
+.bx {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccd4db;
+}
+
+.close-icon {
+    position: absolute !important;
+    right: 0%;
+    top: 0%;
+    color: red !important;
+}
+
+.form-bx {
+    display: flex;
+    width: 65%;
+    background: white;
+    margin: 5rem auto;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 14px 28px, rgb(0 0 0 / 22%) 0px 10px 10px;
+}
+
+.MuiTextField-root {
+    margin-bottom: 1.5rem !important;
+    width: 100%;
+}
+
+.MuiTextField-root:last-child {
+    margin-bottom: 0rem !important;
+    width: 100%;
+}
+
+
+
+.left_bx {
+    padding: 2rem;
+    width: 50%;
+}
+
+.right_bx {
+    width: 50%;
+    background: url("./login.jpg")no-repeat;
+    background-size: cover;
+    opacity: .8;
+}
+
+@media (max-width:576px) {
+    .left_bx {
+        width: 100%;
+        padding: 0;
+    }
+
+    .right_bx {
+        display: none;
+    }
+
+    .form-bx {
+        width: 95%;
+        margin: 1rem;
+        padding: .5rem;
+
+    }
+
+    .MuiTextField-root {
+        margin-bottom: 2rem !important;
+        width: 100%;
+    }
+
+    .css-46bh2p-MuiCardContent-root:last-child {
+        padding-bottom: 0px !important;
+    }
+
+    .css-46bh2p-MuiCardContent-root {
+        padding: 5px !important;
+    }
+}
+
+@media (max-width:768px) {
+    .left_bx {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .right_bx {
+        display: none;
+    }
+}
