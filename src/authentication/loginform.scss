@@ -1,10 +1,12 @@
+body{
+    background-color: #ccd4db;
 
+}
 .bx {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ccd4db;
 }
 .field_error{
     color: red !important;
@@ -17,8 +19,9 @@
 }
 
 .form-bx {
+    height: 86%;
     display: flex;
-    width: 65%;
+    width: 70%;
     background: white;
     margin: 5rem auto;
     border-radius: 10px;
@@ -52,17 +55,25 @@
   }
 .left_bx {
     padding: 2rem;
-    width: 50%;
+    width: 45%;
 }
 
 .right_bx {
-    width: 50%;
+    width: 55%;
     background: url("./login.jpg")no-repeat;
     background-size: cover;
     opacity: .8;
 }
 #submt{
-    width: 40%;
+    width: 70%;
+    background-color: #6767d7;
+    color: white;
+    border: 2px solid #6767d7;
+
+}
+#submt:hover{
+    background-color: #ffffff;
+    color: #6767d7;
 }
 @media (max-width:576px) {
    
@@ -83,7 +94,7 @@
     }
 
     .MuiTextField-root {
-        margin-bottom: 2rem !important;
+        // margin-bottom: 2rem !important;
         width: 100%;
     }
 
@@ -100,6 +111,9 @@
 }
 
 @media (max-width:768px) {
+    .bx {
+        height: 100%;
+    }
     .left_bx {
         width: 100%;
         padding: 1rem;

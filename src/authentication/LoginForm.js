@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, IconButton, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import "./loginform.scss"
+// import "./loginform.scss"
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import ImageBack from "./login.jpg"
 

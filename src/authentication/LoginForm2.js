@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, IconButton, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
-import "./loginform.scss"
+// import "./loginform.scss"
 import CancelRoundedIcon from '@mui/icons-material/CancelRounded';
 import ImageBack from "./login.jpg"
 import { Formik, Field, Form, ErrorMessage, FieldArray } from 'formik'
@@ -10,9 +10,10 @@ import * as Yup from "yup";
 const validationSchemas = Yup.object().shape({
     condidates: Yup.array().of(
         Yup.object().shape({
-            fname: Yup.string().required("This Field is required"),
-            email: Yup.string().required("This Field is required").email("invalid email"),
-            password: Yup.string().required("This Field is required"),
+            fname: Yup.string().required("*This Field is required"),
+            email: Yup.string().required("*This Field is required").email("invalid email"),
+            password: Yup.string().required('No password provided.').min(8, 'Password is too short - should be 8 chars minimum.')
+            ,
             address: Yup.string().required("This Field is required")
         })
     )
@@ -56,9 +57,9 @@ const LoginForm2 = () => {
                                                                         <Field
                                                                             className="form-control"
                                                                             type="text"
-                                                                            label="name"
+                                                                            placeholder="Name"
                                                                             name={`condidates.${i}.fname`}
-
+                                                                          
                                                                         />
 
                                                                         <ErrorMessage component='span' className='field_error' name={`condidates.${i}.fname`} />
@@ -67,7 +68,7 @@ const LoginForm2 = () => {
                                                                         <Field
                                                                             className="form-control"
                                                                             type="email"
-                                                                            label="email"
+                                                                            placeholder="Email"
                                                                             name={`condidates.${i}.email`}
 
                                                                         />
@@ -77,7 +78,7 @@ const LoginForm2 = () => {
                                                                         <Field
                                                                             className="form-control"
                                                                             type="password"
-                                                                            label="password"
+                                                                            placeholder="Password"
                                                                             name={`condidates.${i}.password`}
 
                                                                         />
@@ -87,7 +88,7 @@ const LoginForm2 = () => {
                                                                         <Field
                                                                             className="form-control"
                                                                             type="text"
-                                                                            label="Address"
+                                                                            placeholder="Address"
                                                                             name={`condidates.${i}.address`}
 
                                                                         />
@@ -112,14 +113,14 @@ const LoginForm2 = () => {
                                             }
                                         }
                                         />
-                                        <div style={{ marginBottom: "2rem" }}>
+                                        {/* <div style={{ marginBottom: "2rem" }}>
                                             <ReCAPTCHA
-                                                sitekey={process.env.REACT_APP_SITE_KEY}
+                                                sitekey={process.env.REACT_APP_SITE_KEY_2}
                                                 onChange={handlecaptcha}
                                             />
-                                        </div>
+                                        </div> */}
                                         <div style={{ display: "flex", justifyContent: "center" }} >
-                                            <Button disabled={!isVerified} variant="outlined" id='submt' type="submit" size="large">Submit</Button>
+                                            <Button variant="outlined" id='submt' type="submit" size="large">Submit</Button>
                                         </div>
                                     </div>
                                     <div className='right_bx'>

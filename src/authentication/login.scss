@@ -1,0 +1,77 @@
+.MuiTextField-root {
+    // margin-bottom: 2rem !important;
+    width: 100%;
+}
+.error{
+    color: red;
+    margin-top: 2px;
+    padding-left: 8px;
+    font-size: 14px;
+}
+.left_bx p,  .right_bx_signup p {
+   margin-bottom: 1rem;
+}
+.MuiTextField-root:last-child {
+    margin-bottom: 0rem !important;
+}
+.left_bx,.right_bx_signup{
+    h1{
+        color: #4f4f8f;
+    }
+    h4 {
+        margin-bottom: .5rem;
+        color: #4f4f8f;
+    }
+
+    p,span {
+        color: grey;
+        font-size: 14px;
+    }
+}
+.checkbox-reset{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.left_bx_signup {
+    width: 40%;
+    opacity: .8;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.right_bx_signup {
+    padding: 1rem;
+    width: 60%;
+    padding-top: 0.5rem;
+}
+.overflowsscl{
+    overflow-y: scroll;
+
+}
+.checkbxs{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+@media (max-width:576px) {
+    .right_bx_signup {
+        padding: 0.5rem;
+    }
+    
+}
+@media (max-width:991px) {
+    .bx {
+        height: 100%;
+    }
+    .right_bx_signup {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .left_bx_signup{
+        display: none;
+    }
+}
